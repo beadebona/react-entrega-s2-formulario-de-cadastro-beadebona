@@ -1,7 +1,7 @@
 import { useState } from "react"
 import InputStyled from "./style"
 
-const Input = ({ icon:Icon, label }) =>{
+const Input = ({ icon:Icon, label, name, register, ...rest }) =>{
     const [isValid, setIsValid] = useState(false)
 
     return (
@@ -10,7 +10,7 @@ const Input = ({ icon:Icon, label }) =>{
             <label>{label.toUpperCase()}</label>
             <Icon/>
             <input
-            // {...rest} {...register(name)}
+             {...rest} {...register(name)}
             onChange={(evt) => evt.target.value=== ""? setIsValid(false): setIsValid(true)}/>
 
         </InputStyled>
