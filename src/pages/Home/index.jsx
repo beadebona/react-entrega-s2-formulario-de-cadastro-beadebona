@@ -1,12 +1,12 @@
 import Header from "../../components/Header"
-import { useHistory } from "react-router-dom"
 
-const Home =()=>{
-    const history = useHistory()
+
+const Home =({member, setMember})=>{
+
+
     return (
         <>
-               <Header name="Bea"/>
-               <button onClick={() =>history.push("/")}>sair meu deus</button>
+               <Header name={member.name} member={member} setMember={setMember}/>
         </>
 
     )
